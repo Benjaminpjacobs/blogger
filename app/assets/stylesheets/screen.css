@@ -761,3 +761,7 @@ div.field_with_errors label {
 div.field_with_errors input {
     border: 3px solid red
 }
+
+button a {
+    text-decoration: none;
+}

@@ -24,6 +24,8 @@ class ArticlesController < ApplicationController
 
   def destroy
     title = @article.title
+    id = @article.id
+    Tagging.where('article_id = ?', id).destroy_all
     @article.destroy
     flash.notice = "Article '#{title}' Deleted!"
 

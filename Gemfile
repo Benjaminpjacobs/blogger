@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
+gem 'sorcery'
 
 
 # Use Capistrano for deployment

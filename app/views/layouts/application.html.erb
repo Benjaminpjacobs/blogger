@@ -10,23 +10,36 @@
 </head>
 
 <body>
-    <p class="flash">
-        <%= flash.notice %>
-    </p>
-    <div id="container">
-        <div id="content">
-            <%= yield %>
-                <hr>
-                <h6>
-                    <% if logged_in? %>
-                        <%= "Logged in as #{current_user.email}" %>
-                            <%= link_to "(logout)", logout_path %>
-                                <% else %>
-                                    <%= link_to "(login)", login_path %>
-                                        <% end %>
-                </h6>
+    <section class="non-nav">
+
+        <p class="flash">
+            <%= flash.notice %>
+        </p>
+        <div id="container">
+            <div id="content">
+                <%= yield %>
+                    <hr>
+                    <h6>
+                        <% if logged_in? %>
+                            <%= "Logged in as #{current_user.email}" %>
+                                <%= link_to "(logout)", logout_path %>
+                                    <% else %>
+                                        <%= link_to "(login)", login_path %>
+                                            <% end %>
+                    </h6>
+            </div>
         </div>
-    </div>
+    </section>
+    <nav class="nav">
+    <ul>
+      <li><%= link_to "Articles", articles_path %></li>
+      <li><%= link_to "Tags", tags_path %></li>
+      <% if logged_in? %>
+      <li><%= link_to "Authors", authors_path %></li>
+      <li><%= link_to "New Author", new_author_path %></li>
+      <%end%>
+      <ul>
+    </nav>
 </body>
 
 </html>
